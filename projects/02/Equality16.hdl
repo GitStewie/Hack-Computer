@@ -1,0 +1,43 @@
+// Helper Chip 2
+
+/**
+ * If a[16]=b[16], out=1 else out=0
+ */
+
+CHIP Equality16 {
+    IN a[16], b[16];
+    OUT out;
+
+    PARTS:
+	Equality(a=a[0], b=b[0], out=one);
+	Equality(a=a[1], b=b[1], out=two);
+	Equality(a=a[2], b=b[2], out=three);
+	Equality(a=a[3], b=b[3], out=four);
+	Equality(a=a[4], b=b[4], out=five);
+	Equality(a=a[5], b=b[5], out=six);
+	Equality(a=a[6], b=b[6], out=seven);
+	Equality(a=a[7], b=b[7], out=eight);
+	Equality(a=a[8], b=b[8], out=nine);
+	Equality(a=a[9], b=b[9], out=ten);
+	Equality(a=a[10], b=b[10], out=eleven);
+	Equality(a=a[11], b=b[11], out=twelve);
+	Equality(a=a[12], b=b[12], out=thirteen);
+	Equality(a=a[13], b=b[13], out=fourteen);
+	Equality(a=a[14], b=b[14], out=fifteen);
+	Equality(a=a[15], b=b[15], out=sixteen);
+	And(a=one, b=two, out=result1);
+	And(a=result1, b=three, out=result2);
+	And(a=result2, b=four, out=result3);
+	And(a=result3, b=five, out=result4);
+	And(a=result4, b=six, out=result5);
+	And(a=result5, b=seven, out=result6);
+	And(a=result6, b=eight, out=result7);
+	And(a=result7, b=nine, out=result8);
+	And(a=result8, b=ten, out=result9);
+	And(a=result9, b=eleven, out=result10);
+	And(a=result10, b=twelve, out=result11);
+	And(a=result11, b=thirteen, out=result12);
+	And(a=result12, b=fourteen, out=result13);
+	And(a=result13, b=fifteen, out=result14);
+	And(a=result14, b=sixteen, out=out);
+}

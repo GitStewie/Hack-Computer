@@ -1,0 +1,17 @@
+// Helper Chip
+
+/**
+ * If a=b, out=1 else out=0
+ */
+
+CHIP Equality {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+	Not(in=a, out=notA1);
+	Not(in=b, out=notB1);
+	And(a=notA1,b=notB1,out=notAnd1);
+	And(a=a,b=b,out=aAndB);
+	Or(a=aAndB, b=notAnd1);
+}
